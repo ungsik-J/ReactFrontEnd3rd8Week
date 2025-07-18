@@ -6,6 +6,7 @@ import TextArea from './component/TextArea';
 import Select from './component/Select';
 import Booking from './component/Booking';
 import SignUp from './component/SignUp';
+import Table from './chapter_01/Table';
 
 const App = () => {
 
@@ -13,7 +14,7 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <h5>React, Hello World</h5>
-        <SignUp />
+        <Table />
       </header>
     </div>
   );
