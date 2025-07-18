@@ -39,7 +39,7 @@ const Parent = () => {
                 handleOnClick={handleAddCustomer}
             />
             <ul>
-                {customers?.map((customer) => (
+                {customers.map((customer) => (
                     <li key={customer.id} onDoubleClick={() => handleDelete(customer.id)}>
                         {customer.name}
                     </li>
