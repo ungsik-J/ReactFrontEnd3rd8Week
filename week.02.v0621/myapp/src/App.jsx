@@ -2,7 +2,10 @@ import { useState } from 'react'
 import './App.css'
 
 import UseEffect from './component/UseEffect'
-import ProductList from './component/ProductList'
+//import ProductList from './component / ProductList'
+import UserList from './component/UserList'
+
+import ProductList from './reducers/ProductList'
 
 function App() {
 

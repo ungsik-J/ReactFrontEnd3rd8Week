@@ -6,3 +6,6 @@
 # 2.React 선택
 # 3.javascript
 # 4.npm install
+
+# JSON API response
+# https://jsonplaceholder.typicode.com/
