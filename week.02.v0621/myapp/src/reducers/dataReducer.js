@@ -11,11 +11,11 @@ export function dataReducer(state, action) {
             return { ...state, loading: true, error: null }
             break;
         case 'FETCH_SUCCESS':
-            console.log(`reducers\dataReducer.data : ${data}`)
+            console.log(`reducers\dataReducer.data : ${state}`)
             return { loading: false, data: action.payload, error: null }
             break;
         case 'FETCH_ERROR':
-            console.log(`reducers\dataReducer.data : ${data}`)
+            console.log(`reducers\dataReducer.data : ${state}`)
             return { loading: false, data: [], error: action.error }
             break;
         default:
