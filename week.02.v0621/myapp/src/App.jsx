@@ -7,8 +7,11 @@ import UserList from './component/UserList'
 
 import ProductList from './reducers/ProductList'
 
+import ChangeColor from './component/ChangeColor'
+
 function App() {
 
+  useState;
   /** UseEffect ****************************************************************
   const [visible, setVisible] = useState(false)
     return (
@@ -26,7 +29,7 @@ function App() {
   *************************************************************************** */
   return (
     <>
-      <ProductList />
+      <ChangeColor />
     </>
   )
 }
