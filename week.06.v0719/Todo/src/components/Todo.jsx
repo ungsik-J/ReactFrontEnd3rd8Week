@@ -12,37 +12,35 @@ const todoStyle = {
 }
 
 const initialTodos = [
-    {id: 1, text: "리액트 공부", checked: true},
-     {id: 2, text: "자바 공부", checked: false},
-      {id: 3, text: "자바스크립트 공부", checked: true},
-       {id: 4, text: "파이썬 공부", checked: false}
+    { id: 1, text: "리액트 공부", checked: true },
+    { id: 2, text: "자바 공부", checked: false },
+    { id: 3, text: "자바스크립트 공부", checked: true },
+    { id: 4, text: "파이썬 공부", checked: false }
 ]
-
-
 
 const Todo = () => {
     const [todos, setTodos] = useState(initialTodos);
-    const nextId = useRef(initialTodos.length>0? 
-        Math.max(...initialTodos.map(todo=>todo.id))+1: 1)
-    const handleInsert = useCallback((obj)=>{
+    const nextId = useRef(initialTodos.length > 0 ?
+        Math.max(...initialTodos.map(todo => todo.id)) + 1 : 1)
+    const handleInsert = useCallback((obj) => {
         setTodos(prev => [
             ...prev, obj
         ]
         )
     }, [])
-  return (
-    <div style={todoStyle}>
-        <TodoTemplate>
-            <TodoInsert
-                handleInsert={handleInsert}
-                nextId = {nextId}
-            />
-            <TodoList
-                todos={todos}
-            />
-        </TodoTemplate>
-    </div>
-  )
+    return (
+        <div style={todoStyle}>
+            <TodoTemplate>
+                <TodoInsert
+                    handleInsert={handleInsert}
+                    nextId={nextId}
+                />
+                <TodoList
+                    todos={todos}
+                />
+            </TodoTemplate>
+        </div>
+    )
 }
 
 export default Todo
