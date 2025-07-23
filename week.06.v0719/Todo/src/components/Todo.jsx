@@ -28,6 +28,10 @@ const Todo = () => {
         ]
         )
     }, [])
+    const handleRemove = (id) => {
+        setTodos(prev => prev.filter(todo => todo.id !== id));
+    };
+
     return (
         <div style={todoStyle}>
             <TodoTemplate>
@@ -37,6 +41,8 @@ const Todo = () => {
                 />
                 <TodoList
                     todos={todos}
+                    onRemove={handleRemove}
+
                 />
             </TodoTemplate>
         </div>
