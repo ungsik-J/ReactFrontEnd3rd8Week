@@ -3,6 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+import ClienApp from '../client/src/ClienApp'
+
 
 import UseState from './api/hooks/useState'
 import UseEffect from './api/hooks/UseEffect'
@@ -15,7 +17,7 @@ function App() {
 
   return (
     <>
-      <UseReducer />
+      <ClienApp />
     </>
   )
 }
