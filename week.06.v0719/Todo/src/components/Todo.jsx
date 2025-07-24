@@ -21,7 +21,6 @@ const initialTodos = [
 
 const Todo = () => {
     const [todos, setTodos] = useState(initialTodos);
-    const nextId = uuidv4(); //useRef(initialTodos.length > 0 ? Math.max(...initialTodos.map(todo => todo.id)) + 1 : 1)
     const handleInsert = useCallback((obj) => {
         setTodos(prev => [...prev, obj])
     }, [])
@@ -40,7 +39,7 @@ const Todo = () => {
             <TodoTemplate>
                 <TodoInsert
                     handleInsert={handleInsert}
-                    nextId={nextId}
+                    nextId={uuidv4()}
                 />
                 <TodoList
                     key={uuidv4()}
