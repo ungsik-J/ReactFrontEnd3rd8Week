@@ -60,6 +60,7 @@ const TodoInsert = ({ nextId, handleInsert }) => {
                 value={text}
                 onChange={handleChange}
                 placeholder="할 일을 입력하세요"
+                autoFocus
             />
             <button style={buttonStyle}>
                 <MdAdd />
