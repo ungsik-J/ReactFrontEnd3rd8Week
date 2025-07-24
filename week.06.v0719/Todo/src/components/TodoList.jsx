@@ -9,7 +9,7 @@ const listStyle = {
   overflow: "auto"
 };
 
-const TodoList = React.memo(({ todos, onRemove }) => {
+const TodoList = React.memo(({ todos, onRemove, onChecked }) => {
   return (
     <div style={listStyle}>
       {todos.map(todo => (
@@ -17,6 +17,7 @@ const TodoList = React.memo(({ todos, onRemove }) => {
           key={uuidv4()}
           todo={todo}
           onRemove={onRemove}
+          onChecked={onChecked}
         />
       ))}
     </div>

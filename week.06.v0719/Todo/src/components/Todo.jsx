@@ -24,15 +24,18 @@ const Todo = () => {
     const nextId = uuidv4(); //useRef(initialTodos.length > 0 ? Math.max(...initialTodos.map(todo => todo.id)) + 1 : 1)
     const handleInsert = useCallback((obj) => {
         console.log(obj)
-        setTodos(prev => [
-            ...prev, obj
-        ]
-        )
+        setTodos(prev => [...prev, obj])
     }, [])
     const handleRemove = (id) => {
         setTodos(prev => prev.filter(todo => todo.id !== id));
     };
-
+    const handleChecked = (obj) => {
+        setTodos(
+            todos.map(todo =>
+                todo.id === obj.id ? { ...todo, checked: !todo.checked } : todo
+            )
+        );
+    }
     return (
         <div style={todoStyle}>
             <TodoTemplate>
@@ -44,6 +47,7 @@ const Todo = () => {
                     key={uuidv4()}
                     todos={todos}
                     onRemove={handleRemove}
+                    onChecked={handleChecked}
                 />
             </TodoTemplate>
         </div>

@@ -23,10 +23,11 @@ const itemStyle = {
 }
 
 
-const TodoListItem = ({ todo, onRemove }) => {
+const TodoListItem = ({ todo, onRemove, onChecked }) => {
     return (
         <div style={itemStyle}>
-            <div style={checkboxStyle}>
+            <div onClick={() => onChecked(todo)}
+                style={checkboxStyle}>
                 {todo.checked ?
                     (<MdCheckBox style={{ fontSize: "1.5rem", color: "#339af0" }} />)
                     : (<MdCheckBoxOutlineBlank style={{ fontSize: "1.5rem", color: "#495057" }} />)
@@ -39,7 +40,7 @@ const TodoListItem = ({ todo, onRemove }) => {
                 {todo.text}
             </div>
             <div style={removeStyle}>
-                <MdRemoveCircleOutline onClick={() => onRemove(todo.id)} />
+                {todo.checked ? <MdRemoveCircleOutline onClick={() => onRemove(todo.id)} /> : ""}
             </div>
         </div>
     )
