@@ -1,13 +1,13 @@
-import React, { useCallback, useState } from 'react'
-import { MdAdd } from 'react-icons/md'
+import React, { useState } from 'react';
+import { MdAdd } from 'react-icons/md';
 
 const formStyle = {
-    display: "flex",
-    background: "#e9e9e9ff",
-}
+    display: 'flex',
+    background: '#e9e9e9ff',
+};
 
 const inputStyle = {
-    background: "none",
+    background: 'none',
     outline: 'none',
     border: 'none',
     padding: '0.5rem',
@@ -15,55 +15,57 @@ const inputStyle = {
     lineHeight: '1.5',
     color: '#000',
     flex: 1,
-}
+};
 
 const buttonStyle = {
     outline: 'none',
     border: 'none',
-    background: "#868e96",
+    background: '#868e96',
     color: 'white',
     paddingLeft: '1rem',
     paddingRight: '1rem',
     fontSize: '1.5rem',
-    display: "flex",
-    alignItems: "center",
-    cursor: "pointer",
-    transition: "0.1s background ease-in"
-}
-
-const initialItem = {
-    id: null,
-    text: null,
-    checked: false,
-}
-
+    display: 'flex',
+    alignItems: 'center',
+    cursor: 'pointer',
+    transition: '0.1s background ease-in',
+};
 
 const TodoInsert = ({ nextId, handleInsert }) => {
-    const [item, setItem] = useState(initialItem);
+    const [text, setText] = useState('');
 
-    const handleChange = useCallback((e) => {
-        setItem(prev => ({ ...prev, id: nextId, [e.target.name]: e.target.value }))
-    }, [])
+    const handleChange = (e) => {
+        setText(e.target.value);
+    };
 
-    const handleSubmit = useCallback((e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        handleInsert(item);
+        if (!text.trim()) return;
 
-    }, [handleInsert, item.text, nextId])
+        handleInsert({
+            id: nextId,
+            text: text.trim(),
+            checked: false,
+        });
+
+        setText('');
+    };
+
     return (
         <form style={formStyle} onSubmit={handleSubmit}>
             <input
                 style={inputStyle}
                 type="text"
                 name="text"
+                value={text}
                 onChange={handleChange}
-                placeholder='할 일을 입력하세요'
+                placeholder="할 일을 입력하세요"
             />
             <button style={buttonStyle}>
                 <MdAdd />
             </button>
         </form>
-    )
-}
+    );
+};
 
-export default TodoInsert
+export default TodoInsert;
