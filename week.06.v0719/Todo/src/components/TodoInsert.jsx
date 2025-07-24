@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { MdAdd } from 'react-icons/md';
 
 const formStyle = {
@@ -33,6 +33,12 @@ const buttonStyle = {
 
 const TodoInsert = ({ nextId, handleInsert }) => {
     const [text, setText] = useState('');
+    const inputRef = useRef(null);
+
+    useEffect(() => {
+        inputRef.current?.focus();
+    }, [text]);
+
 
     const handleChange = (e) => {
         setText(e.target.value);
@@ -61,6 +67,7 @@ const TodoInsert = ({ nextId, handleInsert }) => {
                 onChange={handleChange}
                 placeholder="할 일을 입력하세요"
                 autoFocus
+                ref={inputRef}
             />
             <button style={buttonStyle}>
                 <MdAdd />
