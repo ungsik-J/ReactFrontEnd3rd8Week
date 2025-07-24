@@ -1,28 +1,25 @@
-import React from 'react'
-import TodoListItem from './TodoListItem'
+// TodoList.js
+import React from 'react';
+import TodoListItem from './TodoListItem';
 
 const listStyle = {
   minHeight: "320px",
   maxHeight: "513px",
   overflow: "auto"
-}
+};
 
-
-
-
-const TodoList = ({ todos, onRemove }) => {
+const TodoList = React.memo(({ todos, onRemove }) => {
   return (
     <div style={listStyle}>
       {todos.map(todo => (
         <TodoListItem
           key={todo.id}
           todo={todo}
-          onRemove={onRemove}   // 삭제 이벤트 전달
-
+          onRemove={onRemove}
         />
       ))}
     </div>
-  )
-}
+  );
+});
 
-export default TodoList
+export default TodoList;
