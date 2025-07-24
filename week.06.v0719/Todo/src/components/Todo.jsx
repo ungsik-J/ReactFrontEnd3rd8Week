@@ -1,4 +1,5 @@
 import React, { useCallback, useState, useRef } from 'react'
+import { v4 as uuidv4 } from 'uuid';
 import TodoList from './TodoList'
 import TodoInsert from './TodoInsert'
 import TodoTemplate from './TodoTemplate'
@@ -12,10 +13,10 @@ const todoStyle = {
 }
 
 const initialTodos = [
-    { id: 1, text: "리액트 공부", checked: true },
-    { id: 2, text: "자바 공부", checked: false },
-    { id: 3, text: "자바스크립트 공부", checked: true },
-    { id: 4, text: "파이썬 공부", checked: false }
+    { id: uuidv4(), text: "리액트 공부", checked: true },
+    { id: uuidv4(), text: "자바 공부", checked: false },
+    { id: uuidv4(), text: "자바스크립트 공부", checked: true },
+    { id: uuidv4(), text: "파이썬 공부", checked: false }
 ]
 
 const Todo = () => {
@@ -40,9 +41,9 @@ const Todo = () => {
                     nextId={nextId}
                 />
                 <TodoList
+                    key={uuidv4()}
                     todos={todos}
                     onRemove={handleRemove}
-
                 />
             </TodoTemplate>
         </div>

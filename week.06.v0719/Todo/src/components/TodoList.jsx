@@ -1,6 +1,7 @@
 // TodoList.js
 import React from 'react';
 import TodoListItem from './TodoListItem';
+import { v4 as uuidv4 } from 'uuid';
 
 const listStyle = {
   minHeight: "320px",
@@ -13,7 +14,7 @@ const TodoList = React.memo(({ todos, onRemove }) => {
     <div style={listStyle}>
       {todos.map(todo => (
         <TodoListItem
-          key={todo.id}
+          key={uuidv4()}
           todo={todo}
           onRemove={onRemove}
         />

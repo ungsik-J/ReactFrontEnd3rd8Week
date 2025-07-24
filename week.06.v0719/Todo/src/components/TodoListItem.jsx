@@ -36,7 +36,6 @@ const TodoListItem = ({ todo, onRemove }) => {
                     (<MdCheckBox style={{ fontSize: "1.5rem", color: "#339af0" }} />)
                     : (<MdCheckBoxOutlineBlank style={{ fontSize: "1.5rem", color: "#495057" }} />)
                 }
-
             </div>
             <div style={{
                 ...textStyle,
