@@ -3,9 +3,6 @@ import { MdCheckBox, MdCheckBoxOutlineBlank, MdRemoveCircleOutline } from 'react
 
 const checkboxStyle = {
     cursor: "pointer",
-    flex: 1,
-    display: "flex",
-    alignItems: "center"
 }
 
 const textStyle = {
@@ -14,8 +11,6 @@ const textStyle = {
 }
 
 const removeStyle = {
-    display: 'flex',
-    alignItems: "center",
     fontSize: '1.5rem',
     color: "#ff6b6b",
     cursor: "pointer"
@@ -39,9 +34,8 @@ const TodoListItem = ({ todo, onRemove }) => {
             </div>
             <div style={{
                 ...textStyle,
-                textDecoration: todo.checked ? 'line-through' : 'none',
-                color: todo.checked ? "#adb5bd" : "#495057",
-            }}>
+                textDecoration: todo.checked ? 'line-through' : 'none', color: todo.checked ? "#adb5bd" : "#495057",
+            }} class="list_left">
                 {todo.text}
             </div>
             <div style={removeStyle}>
