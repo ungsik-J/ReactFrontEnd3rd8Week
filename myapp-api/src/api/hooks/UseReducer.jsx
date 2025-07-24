@@ -27,15 +27,39 @@ const COUNT_REDUCER = () => {
 }
 
 const TODO_REDUCER = () => {
+
+    const initialState = []
+    const reducer = (state, action) => {
+        switch (action.type) {
+            case 'ADD-TODO':
+                return [...state, { id: Date.now(), text: action.text, completed: false }]
+            case 'TOGGLE-TODO':
+                return state.map(todo => {
+                    todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
+                })
+            case 'DELETE-TODO':
+                return state.filter(todo => todo.id !== action.id)
+            default:
+                return state;
+        }
+    }
+
+    // App /////////////////////////////////////////////////////////////////////
+
     return (
-        <></>
+        <>
+            <h2>TODO_REDUCER</h2>
+        </>
     )
 }
 
 export default function UseReducer() {
     return (
-        <div>
-            <COUNT_REDUCER />
-        </div>
+        <>
+            <div>
+                <TODO_REDUCER />
+            </div>
+        </>
+
     )
 }
