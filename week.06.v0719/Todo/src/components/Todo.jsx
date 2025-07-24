@@ -4,14 +4,6 @@ import TodoList from './TodoList'
 import TodoInsert from './TodoInsert'
 import TodoTemplate from './TodoTemplate'
 
-const todoStyle = {
-    marginTop: "0rem",
-    marginBottom: "auto",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center"
-}
-
 const initialTodos = [
     { id: uuidv4(), text: "리액트 공부", checked: true },
     { id: uuidv4(), text: "자바 공부", checked: false },
@@ -34,8 +26,9 @@ const Todo = () => {
             )
         );
     }
+
     return (
-        <div style={todoStyle}>
+        <div>
             <TodoTemplate>
                 <TodoInsert
                     handleInsert={handleInsert}
