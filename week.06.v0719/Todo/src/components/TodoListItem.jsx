@@ -35,7 +35,7 @@ const TodoListItem = ({ todo, onRemove }) => {
             <div style={{
                 ...textStyle,
                 textDecoration: todo.checked ? 'line-through' : 'none', color: todo.checked ? "#adb5bd" : "#495057",
-            }} class="list_left">
+            }} className="list_left">
                 {todo.text}
             </div>
             <div style={removeStyle}>
