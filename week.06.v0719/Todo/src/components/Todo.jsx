@@ -4,7 +4,7 @@ import TodoInsert from './TodoInsert'
 import TodoTemplate from './TodoTemplate'
 
 const todoStyle = {
-    marginTop: "-25rem",
+    marginTop: "0rem",
     marginBottom: "auto",
     display: "flex",
     alignItems: "center",
