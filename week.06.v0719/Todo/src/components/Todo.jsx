@@ -21,9 +21,9 @@ const initialTodos = [
 
 const Todo = () => {
     const [todos, setTodos] = useState(initialTodos);
-    const nextId = useRef(initialTodos.length > 0 ?
-        Math.max(...initialTodos.map(todo => todo.id)) + 1 : 1)
+    const nextId = uuidv4(); //useRef(initialTodos.length > 0 ? Math.max(...initialTodos.map(todo => todo.id)) + 1 : 1)
     const handleInsert = useCallback((obj) => {
+        console.log(obj)
         setTodos(prev => [
             ...prev, obj
         ]
