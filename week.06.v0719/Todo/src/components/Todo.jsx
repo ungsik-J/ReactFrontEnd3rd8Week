@@ -4,6 +4,8 @@ import TodoList from './TodoList'
 import TodoInsert from './TodoInsert'
 import TodoTemplate from './TodoTemplate'
 
+import { comm } from '../common/js/utils.js'
+
 const initialTodos = [
     { id: uuidv4(), text: "리액트 공부", checked: true },
     { id: uuidv4(), text: "자바 공부", checked: false },
@@ -12,6 +14,10 @@ const initialTodos = [
 ]
 
 const Todo = () => {
+
+    const utils = comm();
+    const uid = utils.uid;
+
     const [todos, setTodos] = useState(initialTodos);
     const handleInsert = useCallback((obj) => {
         setTodos(prev => [...prev, obj])
@@ -32,10 +38,10 @@ const Todo = () => {
             <TodoTemplate>
                 <TodoInsert
                     handleInsert={handleInsert}
-                    nextId={uuidv4()}
+                    nextId={uid}
                 />
                 <TodoList
-                    key={uuidv4()}
+                    key={uid}
                     todos={todos}
                     onRemove={handleRemove}
                     onChecked={handleChecked}
