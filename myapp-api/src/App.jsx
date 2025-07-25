@@ -10,6 +10,7 @@ import UseState from './api/hooks/useState'
 import UseEffect from './api/hooks/UseEffect'
 import UseCallback from './api/hooks/UseCallback'
 import UseReducer from './api/hooks/UseReducer'
+import UseContext from './api/hooks/UseContext'
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
 
   return (
     <>
-      <UseReducer />
+      <UseContext />
     </>
   )
 }
