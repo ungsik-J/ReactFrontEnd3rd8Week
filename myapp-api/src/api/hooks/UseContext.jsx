@@ -31,14 +31,10 @@ const ThemedButton = () => {
     );
 };
 
-
-
-
 export default function UseContext() {
     const [theme, setTheme] = useState('light');
 
     const toggleTheme = () => {
-        //window.document.getElementsByTagName("body")[0].style = "background:(" + theme + " === 'dark' ? '#fff' : '#000')"
         setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
     };
 
