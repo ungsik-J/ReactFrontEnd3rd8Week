@@ -4,8 +4,8 @@ import TodoList from './TodoList'
 import TodoInsert from './TodoInsert'
 import TodoTemplate from './TodoTemplate'
 
-import { comm } from '../common/js/utils.js'
-
+import { comUtils } from '../common/js/comUtils'
+import { comStyle } from '../common/style/comStyle';
 const initialTodos = [
     { id: uuidv4(), text: "리액트 공부", checked: true },
     { id: uuidv4(), text: "자바 공부", checked: false },
@@ -15,7 +15,7 @@ const initialTodos = [
 
 const Todo = () => {
 
-    const utils = comm();
+    const utils = comUtils();
     const uid = utils.uid;
 
     const [todos, setTodos] = useState(initialTodos);
